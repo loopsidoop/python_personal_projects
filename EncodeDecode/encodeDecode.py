@@ -3,7 +3,7 @@ import base64
 
 window = Tk()
 
-label = Label(window, text ='ENCODE DECODE', font = ("Arial",12,"bold"))
+label = Label(window, text ='ENCODE and DECODE', font = ("Arial",12,"bold"))
 label.grid(row=0, column=0,columnspan=2)
 
 # Variables to be used
