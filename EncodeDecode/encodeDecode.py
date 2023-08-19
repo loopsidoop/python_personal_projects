@@ -3,7 +3,7 @@ import base64
 
 window = Tk()
 
-label = Label(window, text ='ENCODE and DECODE', font = ("Arial",12,"bold"))
+label = Label(window, text ='encrypt / decrypt', font = ("Arial",14,"bold"))
 label.grid(row=0, column=0,columnspan=2)
 
 # Variables to be used
@@ -36,19 +36,17 @@ def activate_decode():
     
 # Boring GUI shit
         
-message_label = Label(window, text="Message", font=("Arial",14)).grid(row=1,column=0)  
+message_label = Label(window, text="MESSAGE", font=("Arial",16)).grid(row=1,column=0)  
 message_entry = Entry(window, font=("Arial", 10), textvariable = message).grid(row=1,column=1)
 
-key_label = Label(window, text="Private Key", font=("Arial",14))
-key_label.grid(row=2,column=0)   
+key_label = Label(window, text="KEY", font=("Arial",16)).grid(row=2,column=0)   
 
-key_entry = Entry(window, font=("Arial", 10), textvariable = private_key)
-key_entry.grid(row=2,column=1)
+key_entry = Entry(window, font=("Arial", 10), textvariable = private_key).grid(row=2,column=1)
 
 mode_encode = Button(window, text="Encode", command = activate_encode, font=("Arial",10)).grid(row=3,column=0, columnspan=2)
 mode_decode = Button(window, text="Decode", command = activate_decode, font=("Arial",10)).grid(row=3,column=1, columnspan=2)
 
-result_label = Label(window, text="Result", font=("Arial", 14)).grid(row=4,column=0)
+result_label = Label(window, text="RESULT", font=("Arial", 14)).grid(row=4,column=0)
 final_result = Entry(window, textvariable=result).grid(row=4,column=1)
 
 window.mainloop()
