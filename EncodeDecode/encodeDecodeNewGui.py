@@ -2,7 +2,7 @@ from tkinter import *
 import base64
 
 window = Tk()
-window.geometry("500x300")
+window.geometry("400x200")
 window.resizable(0,0)
 
 label = Label(window, text ='encrypt / decrypt', font = ("Arial",14,"bold")).pack()
@@ -37,16 +37,16 @@ def activate_decode():
     
 # Boring GUI shit
         
-message_label = Label(window, text="MESSAGE", font=("Arial",12)).place(x=60,y=60)
-message_entry = Entry(window, font=("Arial", 10), textvariable = message,bg = 'ghost white').place(x=290,y=60)
+message_label = Label(window, text="MESSAGE", font=("Arial",12,'bold')).place(x=60,y=60)
+message_entry = Entry(window, font=("Arial", 10), textvariable = message,bg = 'ghost white').place(x=200,y=60)
 
-key_label = Label(window, text="KEY", font=("Arial",12)).place(x=60, y = 90)
-key_entry = Entry(window, font=("Arial", 10), textvariable = private_key, bg ='ghost white').place(x=290,y=90)
+key_label = Label(window, text="KEY", font=("Arial",12,'bold')).place(x=60, y = 90)
+key_entry = Entry(window, font=("Arial", 10), textvariable = private_key, bg ='ghost white').place(x=200,y=90)
 
-mode_encode = Button(window, text="Encode", command = activate_encode, font=("Arial",10)).place(x=190,y=120)
-mode_decode = Button(window, text="Decode", command = activate_decode, font=("Arial",10)).place(x=275,y=120)
+mode_encode = Button(window, text="Encode", command = activate_encode, font=("Arial",10)).place(x=150,y=120)
+mode_decode = Button(window, text="Decode", command = activate_decode, font=("Arial",10)).place(x=220,y=120)
 
 result_label = Label(window, text="RESULT", bg ='ghost white', font=("Arial", 14))
-final_result = Entry(window, textvariable=result).place(x=200,y=160)
+final_result = Entry(window, textvariable=result).place(x=150,y=160)
 
 window.mainloop()
