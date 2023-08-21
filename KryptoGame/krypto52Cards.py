@@ -19,22 +19,25 @@ window.resizable(0,0)
 window.title("Krypto Generator")
 title = Label(window, text="Krypto Generator", font=("Arial", 14, 'bold')).pack()
 
+# Setting the variables and integers
 target_num,num1,num2,num3,num4,num5 = StringVar(), StringVar(), StringVar(), StringVar(), StringVar(), StringVar()
 cards = IntVar()
 
+# The deck of 52 cards
 krypto_possibilities = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 8, 9, 9, 9, 10, 10, 10,
                             11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 18, 19, 20, 21, 22, 23, 24, 25]
 
 def gen_krypto():
     global krypto_possibilities
     krypto_list = []
-    if len(krypto_possibilities) < 6:
+    if len(krypto_possibilities) < 6: # reshuffles the deck back into 52 cards
         krypto_possibilities = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 8, 9, 9, 9, 10, 10, 10,
                             11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 18, 19, 20, 21, 22, 23, 24, 25]
     while len(krypto_list) < 6:
         krypto = random.choice(krypto_possibilities) # finds a random number in the list
         krypto_possibilities.remove(krypto) # removes the number from the list
         krypto_list.append(str(krypto))
+    # Sets the card to each label
     target_num.set(krypto_list[5])
     num1.set(krypto_list[0])
     num2.set(krypto_list[1])
@@ -42,7 +45,6 @@ def gen_krypto():
     num4.set(krypto_list[3])
     num5.set(krypto_list[4])
     cards.set(len(krypto_possibilities))
-    print(krypto_possibilities)
 cards.set(len(krypto_possibilities))
 
 target_num_label = Label(window, textvariable=target_num, font=("Calibri",25,'bold'),width=20,height=1, bg='ghost white',relief=SOLID).place(x=25,y=30)
