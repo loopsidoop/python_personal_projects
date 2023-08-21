@@ -2,12 +2,13 @@ import random
 from tkinter import *
 
 window = Tk()
-window.geometry('400x250')
+window.geometry('400x270')
 window.resizable(0,0)
 window.title("Krypto Generator")
 title = Label(window, text="Krypto Generator", font=("Arial", 14, 'bold')).pack()
 
 target_num,num1,num2,num3,num4,num5 = StringVar(), StringVar(), StringVar(), StringVar(), StringVar(), StringVar()
+cards = IntVar()
 
 krypto_possibilities = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 8, 9, 9, 9, 10, 10, 10,
                             11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 18, 19, 20, 21, 22, 23, 24, 25]
@@ -28,6 +29,8 @@ def gen_krypto():
     num3.set(krypto_list[2])
     num4.set(krypto_list[3])
     num5.set(krypto_list[4])
+    cards.set(len(krypto_possibilities))
+cards.set(len(krypto_possibilities))
 
 target_num_label = Label(window, textvariable=target_num, font=("Calibri",25,'bold'),width=20,height=1, bg='ghost white',relief=SOLID).place(x=25,y=30)
 num1_label = Label(window, textvariable=num1, font=("Calibri",25,'bold'),width=3,height=1, bg='ghost white',relief=SOLID).place(x=25,y=80)
@@ -39,5 +42,8 @@ num5_label = Label(window, textvariable=num5, font=("Calibri",25,'bold'),width=3
 button = Button(window, text="GENERATE", 
                 command = gen_krypto,
                 font=("Arial",20,'bold')).place(x=120,y=150)
+
+cards_text = Label(window, text="Cards left: ", font=("Arial", 11)).place(x=150,y=220)
+cards_label = Label(window,textvariable=cards, font=("Arial", 11)).place(x=220,y=220)
 
 window.mainloop()
