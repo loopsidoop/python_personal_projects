@@ -1,3 +1,10 @@
+"""
+
+A simple horizontal graph showcasing the basic stats of the first 3 started pokemons
+
+"""
+
+
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
@@ -5,16 +12,19 @@ import numpy as np
 # Sample data
 df = pd.read_csv('Pokemon/pokemon_data.csv',index_col=0)
 
+# Stats of the first evolution
 name_1 = df.iloc[[0,4,9],0]
 hp_1 = df.iloc[[0,4,9],3]
 attack_1 = df.iloc[[0,4,9],4]
 defense_1 = df.iloc[[0,4,9],5]
 
+# Stats of the second evolution
 name_2 = df.iloc[[1,5,10],0]
 hp_2 = df.iloc[[1,5,10],3]
 attack_2 = df.iloc[[1,5,10],4]
 defense_2 = df.iloc[[1,5,10],5]
 
+# Stats of the third evolution
 name_3 = df.iloc[[2,6,11],0]
 hp_3 = df.iloc[[2,6,11],3]
 attack_3 = df.iloc[[2,6,11],4]
