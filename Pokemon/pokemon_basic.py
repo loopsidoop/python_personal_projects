@@ -1,3 +1,8 @@
+"""
+A simple horizontal graph showcasing the stats of the first 3 basic starter pokemons
+"""
+
+
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
@@ -12,7 +17,7 @@ defense = df.iloc[[0,4,9],5]
 y_indexes = np.arange(len(name))
 
 # Create a figure and axis
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(8,4))
 
 # Calculate bar width to separate the bars
 bar_width = 0.25
