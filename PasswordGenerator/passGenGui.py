@@ -4,6 +4,7 @@ import random
 window = Tk()
 window.geometry('500x200')
 window.resizable(0,0)
+window.title("Password Generator")
 
 
 upperlet, lowerlet, digits, punc, pass_length = IntVar(), IntVar(), IntVar(), IntVar(), IntVar()
