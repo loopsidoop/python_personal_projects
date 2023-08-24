@@ -1,11 +1,5 @@
 import random
 
-
-def shuffle(string):
-  tempList = list(string)
-  random.shuffle(tempList)
-  return ''.join(tempList)
-
 def rand_upper_let():
     return chr(random.randint(65,90))
 def rand_lower_let():
