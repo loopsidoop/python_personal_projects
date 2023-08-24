@@ -1,3 +1,7 @@
+"""
+A simple password generator program
+"""
+
 from tkinter import *
 import random
 
@@ -6,10 +10,11 @@ window.geometry('500x200')
 window.resizable(0,0)
 window.title("Password Generator")
 
-
+# Setting the variables
 upperlet, lowerlet, digits, punc, pass_length = IntVar(), IntVar(), IntVar(), IntVar(), IntVar()
 userPassword = StringVar()
 
+# The random letters, digits, and punctuations
 def rand_upper_let():
     return chr(random.randint(65,90))
 def rand_lower_let():
@@ -19,18 +24,21 @@ def rand_dig():
 def rand_punc():
     return chr(random.randint(32,47))
 
+# Generates the password with the indicated length
 def password_gen(length):
     password = ""
     while len(password) < length:
-        options = make_option_list()
+        options = make_option_list() # Makes the list of possible choices based from the checkbox
         if len(options) == 0:
             return "Check at least 1 box"
         password += random.choice(options)
     return password
 
+# To activate the password_gen func
 def activate_password_gen():
     userPassword.set(password_gen(pass_length.get()))
-    
+   
+# List of possible choices based from the checkbox 
 def make_option_list():
     options = []
     if upperlet.get() == 1:
@@ -42,6 +50,8 @@ def make_option_list():
     if punc.get() == 1:
         options.append(rand_punc())
     return options
+
+# The GUI shit
 
 Label(window, text="Password Generator", font=("Arial", 14, 'bold')).pack()
 
